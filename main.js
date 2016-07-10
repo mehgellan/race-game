@@ -8,13 +8,12 @@ $(document).on('ready', function() {
 
   console.log("JS linked");
   $(document).on('keypress', function handleKeyPress(event) {
-    console.log("keys pressed");
     // animates box left
     if (event.which==100) {
-      $('#blue').animate({left: "+=100"}, "fast");
+      $('#finn').animate({left: "+=100"}, "fast");
     }
     if (event.which==107) {
-      $('#green').animate({left: "+=100"}, "fast");
+      $('#jake').animate({left: "+=100"}, "fast");
     }
     detectWinner();
     // alerting the winner
@@ -24,12 +23,12 @@ $(document).on('ready', function() {
 
   function detectWinner() {
     var rowWidth = $('.row').outerWidth();
-    if ($('#blue').offset().left >= rowWidth) {
+    if ($('#finn').offset().left >= rowWidth) {
       $('.box').clearQueue().stop(true);
-      $('.target').text("Blue!");
-    } else if ($('#green').offset().left >= rowWidth) {
+      $('.target').text("Finn!");
+    } else if ($('#jake').offset().left >= rowWidth) {
       $('.box').clearQueue().stop(true);
-      $('.target').text("Green!");
+      $('.target').text("Jake!");
     }
   }
 

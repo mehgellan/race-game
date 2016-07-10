@@ -3,28 +3,32 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-image: url('img/at-background.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
   padding:5%;
 }
 
 .row {
-  padding: 5% 0;
+  padding: 20px 0;
   margin: 0;
   border: 3px solid red;
 }
 
 .box {
-  height:50px;
-  width:50px;*/
+  height:150px;
+  width:150px;
   position: relative;
+  background-repeat: no-repeat;
+  background-size:contain;
 }
 
-#blue {
-  background-color: blue;
+#finn {
+  background-image: url('img/iceking.png');
 }
 
-#green {
-  background-color: green;
+#jake {
+  background-image: url('img/gunter.png');
 }
 
 .btn {
