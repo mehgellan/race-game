@@ -6,6 +6,15 @@ body {
 .container {
   padding:5%;
   padding-top:0;
+  vertical-align: middle;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.track {
   background-image: url('img/at-background.jpg');
   background-repeat:no-repeat;
   background-position:center;
@@ -19,9 +28,16 @@ body {
 }
 
 .jumbotron {
-  padding-top:0;
+  background-color:white;
+}
+
+.loader {
+  position:fixed;
+  z-index:1;
   margin:0;
-  background-color:transparent;
+  height:50%;
+  width:100%;
+  /*visibility: hidden;*/
 }
 
 img {
@@ -30,13 +46,18 @@ img {
   width:200px;
 }
 
+.logo-sm {
+  height:50px;
+  width:100px;
+}
+
 .target {
   text-align:center;
 }
 
 .box {
-  height:100px;
-  width:100px;
+  height:50px;
+  width:50px;
   position: relative;
   background-repeat: no-repeat;
   background-size:contain;
@@ -49,12 +70,11 @@ img {
 }
 
 #jake {
-  height:150px;
-  width:150px;
+  height:100px;
+  width:100px;
   background-image: url('img/jakehead.png');
 }
 
-.btn {
+.reset {
   /*visibility:hidden;*/
-  margin:2%;
 }

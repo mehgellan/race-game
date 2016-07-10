@@ -13,20 +13,29 @@
     <title>Duck Race</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <img src="img/at-logo.png" class="logo img-fluid pull-md-left">
-        <h1>Race to the Ice Kingdom</h1>
-        <h3>And the winner is...</h3>
-        <h1 class="target pull-xs-left"></h1>
-        <button class="btn btn-warning">Reset</button>
+    <div class="jumbotron loader center-block">
+      <img src="img/at-logo.png" class="logo img-fluid center-block">
+      <h1>Race to the Ice Kingdom</h1>
+      <button class="start btn btn-primary center-block">Start Game</button>
+    </div>
+    <div class="container header">
+      <div class="row">
+        <img src="img/at-logo.png" class="logo-sm img-fluid center-block">
       </div>
-        <div class="row">
-          <div class="box" id="finn"></div>
-        </div>
-        <div class="row">
-          <div class="box" id="jake"></div>
-        </div>
+    </div>
+    <div class="container track">
+      <div class="row">
+        <div class="box" id="finn"></div>
+      </div>
+      <div class="row">
+        <div class="box" id="jake"></div>
+      </div>
+      <button class="stop btn btn-info">Stop</button>
+      <div class="row winner-banner">
+        <h3>And the winner is....</h3>
+        <h1 class="target pull-xs-left"></h1>
+        <button class="reset btn btn-warning center-block">Reset</button>
+      </div>
     </div>
   </body>
 </html>

@@ -1,12 +1,15 @@
 $(document).on('ready', function() {
 
   console.log("JS linked");
-  // $('button').hide();
-  $('button').on('click', function(event) {
-    event.preventDefault();
-    $('.box').css({left:0});
-    console.log("button clicked");
-  });
+  var audio = new Audio('img/flylo-glitc.mp3');
+
+  toggleReset();
+
+  playAudio();
+  stopAudio();
+
+  startGame();
+
   $(document).on('keypress', function handleKeyPress(event) {
     // animates box left
     if (event.which==100) {
@@ -20,18 +23,50 @@ $(document).on('ready', function() {
   });
 
   function detectWinner() {
-    var rowWidth = $('.row').outerWidth;
-    if (($('#finn').offset().left && $('#jake').offset().left) === rowWidth) {
-      $('.target').text("It's a tie!");
-    } else if ($('#finn').offset().left >= rowWidth) {
+    var rowWidth = $('.row').outerWidth();
+    var boxOneOffset = $('#finn').offset().left;
+    var boxTwoOffset = $('#jake').offset().left;
+      if (boxOneOffset >= rowWidth) {
       $('.box').clearQueue().stop(true);
       $('.target').text("Finn!");
-      $('.button').show();
-    } else if ($('#jake').offset().left >= rowWidth) {
+    } else if (boxTwoOffset >= rowWidth) {
       $('.box').clearQueue().stop(true);
       $('.target').text("Jake!");
-      $('.button').show();
     }
   }
+
+  function toggleReset() {
+    $('.reset').on('click', function(event) {
+      event.preventDefault();
+      $('.box').css({left:0});
+      console.log("button clicked");
+    });
+  }
+
+  function startGame() {
+    $('.start').click(function() {
+      $(this).parent().fadeOut(500);
+    });
+  }
+
+  function playAudio() {
+    $('.start').click(function() {
+      audio.play();
+    });
+  }
+
+  function stopAudio() {
+    $('.stop').click(function() {
+      audio.pause();
+    });
+  }
+
+  function toggleWinnerBanner() {
+    if ($('#finn')) {
+
+    }
+  }
+
+
 
 });
