@@ -5,9 +5,11 @@ body {
 
 .container {
   padding:5%;
-  padding-top:0;
-  vertical-align: middle;
+}
 
+.header {
+  padding: 10px 10px;
+  background-color:white;
 }
 
 h1 {
@@ -15,10 +17,12 @@ h1 {
 }
 
 .track {
+  padding-top:10px;
   background-image: url('img/at-background.jpg');
   background-repeat:no-repeat;
   background-position:center;
   background-size: cover;
+  width:100%;
 }
 
 .row {
@@ -35,7 +39,7 @@ h1 {
   position:fixed;
   z-index:1;
   margin:0;
-  height:50%;
+  height:75%;
   width:100%;
   /*visibility: hidden;*/
 }

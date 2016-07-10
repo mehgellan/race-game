@@ -2,9 +2,9 @@ $(document).on('ready', function() {
 
   console.log("JS linked");
   var audio = new Audio('img/flylo-glitc.mp3');
+  var winnerIs;
 
   toggleReset();
-
   playAudio();
   stopAudio();
 
@@ -13,13 +13,12 @@ $(document).on('ready', function() {
   $(document).on('keypress', function handleKeyPress(event) {
     // animates box left
     if (event.which==100) {
-      $('#finn').animate({left: "+=100"}, "fast");
+      $('#finn').animate({left: "+=50"}, "fast");
     }
     if (event.which==107) {
-      $('#jake').animate({left: "+=100"}, "fast");
+      $('#jake').animate({left: "+=50"}, "fast");
     }
     detectWinner();
-
   });
 
   function detectWinner() {
@@ -28,18 +27,30 @@ $(document).on('ready', function() {
     var boxTwoOffset = $('#jake').offset().left;
       if (boxOneOffset >= rowWidth) {
       $('.box').clearQueue().stop(true);
-      $('.target').text("Finn!");
+      winnerIs = 'finn';
+      console.log(winnerIs);
+      toggleWinnerBanner();
+      toggleReset();
     } else if (boxTwoOffset >= rowWidth) {
+      winnerIs = 'jake';
+      console.log(winnerIs);
       $('.box').clearQueue().stop(true);
-      $('.target').text("Jake!");
+      toggleWinnerBanner();
+      toggleReset();
     }
   }
 
   function toggleReset() {
+    if (winnerIs) {
+      $('.reset').show();
+    } else {
+      $('.reset').hide();
+    }
     $('.reset').on('click', function(event) {
       event.preventDefault();
       $('.box').css({left:0});
-      console.log("button clicked");
+      $('.target').text('');
+      winnerIs = 0;
     });
   }
 
@@ -62,11 +73,10 @@ $(document).on('ready', function() {
   }
 
   function toggleWinnerBanner() {
-    if ($('#finn')) {
-
+    if (winnerIs==='finn') {
+      $('.target').text('Finn!');
+    } else if (winnerIs==='jake') {
+      $('.target').text('Jake!');
     }
   }
-
-
-
 });
