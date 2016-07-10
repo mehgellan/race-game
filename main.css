@@ -1,36 +1,60 @@
 body {
   background-color: grey;
+  padding:1%;
 }
 
 .container {
+  padding:5%;
+  padding-top:0;
   background-image: url('img/at-background.jpg');
   background-repeat:no-repeat;
+  background-position:center;
   background-size: cover;
-  padding:5%;
 }
 
 .row {
-  padding: 20px 0;
+  /*padding: 10px 0;*/
   margin: 0;
   border: 3px solid red;
 }
 
+.jumbotron {
+  padding-top:0;
+  margin:0;
+  background-color:transparent;
+}
+
+img {
+  margin:0 auto;
+  height:100px;
+  width:200px;
+}
+
+.target {
+  text-align:center;
+}
+
 .box {
-  height:150px;
-  width:150px;
+  height:100px;
+  width:100px;
   position: relative;
   background-repeat: no-repeat;
   background-size:contain;
 }
 
 #finn {
-  background-image: url('img/iceking.png');
+  margin-left: 10px;
+  background-size:contain;
+  background-image: url('img/finn.png');
 }
 
 #jake {
-  background-image: url('img/gunter.png');
+  height:150px;
+  width:150px;
+  background-image: url('img/jakehead.png');
 }
 
 .btn {
+  /*visibility:hidden;*/
   margin:2%;
 }
