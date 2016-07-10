@@ -1,13 +1,15 @@
 $(document).on('ready', function() {
 
   console.log("JS linked");
-  var audio = new Audio('img/flylo-glitc.mp3');
-  var winnerIs;
+  var game = {
+    winnerIs: '',
+    jake: 0,
+    finn: 0,
+    audio: new Audio('img/flylo-glitc.mp3')
+  };
+
 
   toggleReset();
-  playAudio();
-  stopAudio();
-
   startGame();
 
   $(document).on('keypress', function handleKeyPress(event) {
@@ -25,23 +27,22 @@ $(document).on('ready', function() {
     var rowWidth = $('.row').outerWidth();
     var boxOneOffset = $('#finn').offset().left;
     var boxTwoOffset = $('#jake').offset().left;
-      if (boxOneOffset >= rowWidth) {
+    if (boxOneOffset >= rowWidth) {
+      game.winnerIs = 'finn';
       $('.box').clearQueue().stop(true);
-      winnerIs = 'finn';
-      console.log(winnerIs);
-      toggleWinnerBanner();
-      toggleReset();
+      game.finn++;
+      console.log(game.finn);
     } else if (boxTwoOffset >= rowWidth) {
-      winnerIs = 'jake';
-      console.log(winnerIs);
+      game.winnerIs = 'jake';
       $('.box').clearQueue().stop(true);
-      toggleWinnerBanner();
-      toggleReset();
+      game.jake++;
     }
+    toggleWinnerBanner();
+    toggleReset();
   }
 
   function toggleReset() {
-    if (winnerIs) {
+    if (game.winnerIs) {
       $('.reset').show();
     } else {
       $('.reset').hide();
@@ -50,7 +51,9 @@ $(document).on('ready', function() {
       event.preventDefault();
       $('.box').css({left:0});
       $('.target').text('');
-      winnerIs = 0;
+      game.winnerIs = '';
+      $('.reset').hide();
+      console.log(game.finn, game.jake, game.winnerIs);
     });
   }
 
@@ -58,24 +61,26 @@ $(document).on('ready', function() {
     $('.start').click(function() {
       $(this).parent().fadeOut(500);
     });
+    playAudio();
+    stopAudio();
   }
 
   function playAudio() {
     $('.start').click(function() {
-      audio.play();
+      game.audio.play();
     });
   }
 
   function stopAudio() {
     $('.stop').click(function() {
-      audio.pause();
+      game.audio.pause();
     });
   }
 
   function toggleWinnerBanner() {
-    if (winnerIs==='finn') {
+    if (game.winnerIs==='finn') {
       $('.target').text('Finn!');
-    } else if (winnerIs==='jake') {
+    } else if (game.winnerIs==='jake') {
       $('.target').text('Jake!');
     }
   }
