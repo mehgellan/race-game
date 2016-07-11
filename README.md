@@ -41,10 +41,10 @@ A simple start-finish racing game involving two players, where the first one to 
 ##### Screenshots
 
 Splashpage:
-![alt-text](http://imgur.com/TDGxC6t "Screenshot Splashpage")
+![alt-text](http://i.imgur.com/TDGxC6t.png?1 "Screenshot Splashpage")
 
 Game page:
-![alt-text](http://imgur.com/WsbGKbs "Screenshot Game page") 
+![alt-text](http://i.imgur.com/WsbGKbs.png?1 "Screenshot Game page") 
 
 
 
