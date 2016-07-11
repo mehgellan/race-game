@@ -16,6 +16,10 @@ h1 {
   text-align: center;
 }
 
+.countdown {
+  visibility:hidden;
+}
+
 .track {
   padding-top:10px;
   background-image: url('img/at-background.jpg');
@@ -28,7 +32,7 @@ h1 {
 .row {
   /*padding: 10px 0;*/
   margin: 0;
-  border: 3px solid red;
+  /*border: 3px solid red;*/
 }
 
 .jumbotron {
@@ -45,7 +49,7 @@ h1 {
 }
 
 
-img {
+.logo img {
   margin:0 auto;
   height:100px;
   width:200px;
@@ -66,20 +70,20 @@ img {
   position: relative;
   background-repeat: no-repeat;
   background-size:contain;
+  margin:0;
+  padding:0;
 }
 
 #finn {
-  margin-left: 10px;
   background-size:contain;
   background-image: url('img/finn.png');
 }
 
 #jake {
-  height:100px;
-  width:100px;
   background-image: url('img/jakehead.png');
 }
 
 .reset {
-  /*visibility:hidden;*/
+  font-size:24px;
+  /*visibility:visible;*/
 }

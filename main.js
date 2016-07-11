@@ -12,7 +12,9 @@ $(document).on('ready', function() {
 
   function startGame() {
     $('.start').click(function() {
+      $('.countdown').css('visibility', 'visible');
       countDown();
+      playAudio();
     });
     stopAudio();
     handleKeyPress();
@@ -28,8 +30,8 @@ $(document).on('ready', function() {
       } else {
         $('.countdown').html("GO!");
         clearInterval(counter);
-        playAudio();
-        $('.countdown').parent().fadeOut(500);
+        // playAudio();
+        $('.countdown').parent().fadeOut(300);
       }
     }
   }
@@ -37,41 +39,39 @@ $(document).on('ready', function() {
   function handleKeyPress() {
     $(document).on('keypress', function(event) {
       // animates box left
-      if (event.which==100) {
-        $('#finn').animate({left: "+=50"}, "fast");
+      if (event.which==102) {
+        $('#finn').animate({left: "+=20"}, "fast");
       }
-      if (event.which==107) {
-        $('#jake').animate({left: "+=50"}, "fast");
+      if (event.which==106) {
+        $('#jake').animate({left: "+=20"}, "fast");
       }
       detectWinner();
     });
   }
 
   function detectWinner() {
-    var rowWidth = $('.row').outerWidth(),
+    var rowWidth = $('.length').width(),
         boxOneOffset = $('#finn').offset().left,
         boxTwoOffset = $('#jake').offset().left
     ;
     if (boxOneOffset >= rowWidth) {
       game.winnerIs = 'finn';
       $('.box').clearQueue().stop(true);
-      // game.finn++;
-      console.log(game.finn);
-      // game.keyOff();
     } else if (boxTwoOffset >= rowWidth) {
       game.winnerIs = 'jake';
       $('.box').clearQueue().stop(true);
-      // game.jake++;
     }
-    toggleWinnerBanner();
+    setWinnerBannerText();
     toggleReset();
   }
 
-  function toggleWinnerBanner() {
+  function setWinnerBannerText() {
     if (game.winnerIs==='finn') {
-      $('.target').text('Finn!');
+      $('.target').text('Finn the Human!');
+      $('.target').append('<img src="img/finn.gif">');
     } else if (game.winnerIs==='jake') {
-      $('.target').text('Jake!');
+      $('.target').text('Jake the Dog!');
+      $('.target').append('<img src="img/jake.gif">');
     }
   }
 
@@ -87,19 +87,18 @@ $(document).on('ready', function() {
       } else if (game.winnerIs==='jake') {
         game.jake++;
       }
+      $('.finn-score').text("Finn's score: " + game.finn);
+      $('.jake-score').text("Jake's score: " + game.jake);
       // event.preventDefault();
       $('.box').css({left:0});
       $('.target').text('');
       game.winnerIs = '';
       $('.reset').hide();
-      console.log(game.finn, game.jake, game.winnerIs);
     });
   }
 
   function playAudio() {
-    $('.start').click(function() {
       game.audio.play();
-    });
   }
 
   function stopAudio() {
