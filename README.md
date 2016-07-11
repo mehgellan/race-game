@@ -9,7 +9,6 @@ A simple start-finish racing game involving two players, where the first one to 
 - HTML/CSS: game architecture, styling
 - Bootstrap: grid system, responsive styling, buttons
 - Google fonts: 'Bangers', cursive
-- 
 
 ### Existing Features
 
