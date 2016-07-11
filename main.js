@@ -9,6 +9,13 @@ $(document).on('ready', function() {
   };
 
   startGame();
+  fadeInJumbotron();
+
+  function fadeInJumbotron() {
+    $('#logo-sm').click(function() {
+      $('.jumbotron').fadeIn(300);
+    });
+  }
 
   function startGame() {
     $('.start').click(function() {

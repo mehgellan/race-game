@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css">
 
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -20,18 +21,16 @@
         <h1>Race to the Ice Kingdom</h1>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <h3><span>Oh no!</span> The Ice King stole another princess! Race your buddy to the Ice Kindgom to rescue her!</h3>
-        </div>
+        <h3><span>Oh no!</span> The Ice King stole another princess! Race your buddy to the Ice Kindgom to rescue her!</h3>
       </div>
       <div class="row">
-        <div class="col-md-4 col-xs-6">
-          <img src="img/jakehead.png" class="img-fluid">
-          <p>To move Jake the Dog...press <span>J<span></p>
+        <div class="col-md-6 col-sm-4 col-xs-6">
+          <img src="img/finn.png" class="img-fluid center-block">
+          <p class="center-block">To move Finn the Human...press <span>F</span></p>
         </div>
-        <div class="col-md-4 col-xs-6">
-          <img src="img/finn.png" class="img-fluid">
-          <p>To move Finn the Human...press <span>F</span></p>
+        <div class="col-md-6 col-sm-4 col-xs-6">
+          <img src="img/jakehead.png" class="img-fluid center-block">
+          <p>To move Jake the Dog...press <span>J<span></p>
         </div>
       </div>
       <button class="start btn btn-primary center-block">Start Game</button>
@@ -40,7 +39,8 @@
 
     <div class="container-fluid header">
       <div class="row header">
-        <img src="img/at-logo.png" class="center-block header" id="#logo-sm">
+        <img src="img/at-logo.png" class="img-fluid" id="logo-sm">
+        <button class="stop btn btn-info">Stop the Music</button>
       </div>
     </div>
 
@@ -52,7 +52,6 @@
         <div class="box" id="jake"></div>
       </div>
       <div class="row">
-        <button class="stop btn btn-info">Stop</button>
         <h2>And the winner is....</h2>
       </div>
     </div>
@@ -60,8 +59,8 @@
     <div class="container">
       <div class="row winner-banner">
         <div class="row score">
-          <div class="col-md-3"><h4 class="finn-score"></h4></div>
-          <div class="col-md-3"><h4 class="jake-score"></h4></div>
+          <div class="col-md-6 col-xs-6"><h4 class="finn-score"></h4></div>
+          <div class="col-md-6 col-xs-6"><h4 class="jake-score"></h4></div>
         </div>
         <div class="col-md-4"><h1 class="target pull-xs-left"></h1></div>
         <button class="reset btn btn-warning center-block">Reset</button>

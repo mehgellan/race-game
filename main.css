@@ -3,17 +3,14 @@ body {
   padding:1%;
 }
 
-/************
+/************************************
 LOADER
-************/
+*************************************/
 
 .jumbotron {
   background-color:white;
-}
-
-.jumbotron img {
-  height:100px;
-  width: 100px;
+  font-family:'Bangers', cursive;
+  text-align: center;
 }
 
 .loader {
@@ -25,30 +22,41 @@ LOADER
   /*visibility: hidden;*/
 }
 
-#logo-lg {
-  margin:0 auto;
-  height:100px;
-  width:250px;
-}
-
 h1 {
   text-align: center;
+  font-size:5em;
+}
+
+.start {
+  padding:10px;
+  font-size:3em;
 }
 
 .countdown {
   visibility:hidden;
 }
 
-/************
+#logo-lg {
+  margin:0 auto;
+  height:100px;
+  width:250px;
+}
+
+.jumbotron img {
+  height:100px;
+  width: 100px;
+}
+
+/************************************
 GAME
-************/
+************************************/
 
 .header {
   padding: 10px 10px;
   background-color:white;
 }
 
-.header #logo-sm {
+#logo-sm {
   height:50px;
   width:100px;
 }
@@ -57,8 +65,13 @@ h3 {
   text-align:center;
 }
 
+h2 {
+  font-family:'Bangers', cursive;
+  font-size:3em;
+}
+
 .track {
-  padding-top:10px;
+  padding:5%;
   background-image: url('img/at-background.jpg');
   background-repeat:no-repeat;
   background-position:center;
@@ -67,9 +80,7 @@ h3 {
 }
 
 .row {
-  /*padding: 10px 0;*/
-  margin: 0;
-  /*border: 3px solid red;*/
+  margin: 0 auto;
 }
 
 .target {
@@ -87,7 +98,7 @@ h3 {
 }
 
 #finn {
-  background-size:contain;
+  /*background-size:contain;*/
   background-image: url('img/finn.png');
 }
 
