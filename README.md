@@ -25,11 +25,11 @@ A simple start-finish racing game involving two players, where the first one to 
 - Header logo click handler to bring back splashpage
 - Stop button pauses audio track should annoyance occur
 - Images used:
-  * Finn head - ![alt-text](http://d1x7zurbps6occ.cloudfront.net/product/xlarge/232071-86042.jpg "Player Finn Head")
-  * Finn gif - ![alt-text](http://giphy.com/gifs/happy-excited-adventure-time-rOTGSPxvJJY7m "Finn Winner Gif)
-  * Jake head - ![alt-text](http://adventuretimeforum.com/jakehead.png "Player Jake Head")
-  * Jake gif - ![alt-text](http://giphy.com/gifs/adventure-time-cartoon-network-8Ry7iAVwKBQpG "Jake Winner Gif")
-  * Adventure Time logo - ![alt-text](https://upload.wikimedia.org/wikipedia/en/6/6f/Adventure_Time_logo.png "Adventure Time Logo")
+  * Finn head - (http://d1x7zurbps6occ.cloudfront.net/product/xlarge/232071-86042.jpg "Player Finn Head")
+  * Finn gif - (http://giphy.com/gifs/happy-excited-adventure-time-rOTGSPxvJJY7m "Finn Winner Gif)
+  * Jake head - (http://adventuretimeforum.com/jakehead.png "Player Jake Head")
+  * Jake gif - (http://giphy.com/gifs/adventure-time-cartoon-network-8Ry7iAVwKBQpG "Jake Winner Gif")
+  * Adventure Time logo - (https://upload.wikimedia.org/wikipedia/en/6/6f/Adventure_Time_logo.png "Adventure Time Logo")
 
 ### Planned Features
 
@@ -44,7 +44,7 @@ Splashpage:
 ![alt-text](http://imgur.com/TDGxC6t "Screenshot Splashpage")
 
 Game page:
-![alt-text](http://imgur.com/WsbGKbs "Screenshot Game page) 
+![alt-text](http://imgur.com/WsbGKbs "Screenshot Game page") 
 
 
 
