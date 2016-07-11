@@ -1,6 +1,8 @@
 body {
   background-color: white;
   padding:1%;
+  text-align:center;
+  font-family:'Bangers', cursive;
 }
 
 /************************************
@@ -8,6 +10,7 @@ LOADER
 *************************************/
 
 .jumbotron {
+  padding:0;
   background-color:white;
   font-family:'Bangers', cursive;
   text-align: center;
@@ -36,6 +39,10 @@ h1 {
   visibility:hidden;
 }
 
+/*******************
+LOADER IMAGES
+*******************/
+
 #logo-lg {
   margin:0 auto;
   height:100px;
@@ -52,13 +59,8 @@ GAME
 ************************************/
 
 .header {
-  padding: 10px 10px;
+  padding-bottom:10px;
   background-color:white;
-}
-
-#logo-sm {
-  height:100px;
-  width:200px;
 }
 
 h3 {
@@ -97,17 +99,7 @@ h2 {
   padding:0;
 }
 
-#finn {
-  /*background-size:contain;*/
-  background-image: url('img/finn.png');
-}
-
-#jake {
-  background-image: url('img/jakehead.png');
-}
-
 .reset {
-  font-size:24px;
   /*visibility:visible;*/
 }
 
@@ -115,4 +107,23 @@ span {
   font-weight:bolder;
   color:red;
   font-size:48px;
+}
+
+/*******************
+GAME IMAGES
+*******************/
+
+#logo-sm {
+  height:50px;
+  width:100;
+  text-align:left;
+}
+
+#finn {
+  /*background-size:contain;*/
+  background-image: url('img/finn.png');
+}
+
+#jake {
+  background-image: url('img/jakehead.png');
 }

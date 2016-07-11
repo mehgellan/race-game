@@ -1,22 +1,15 @@
 $(document).on('ready', function() {
 
-  console.log("JS linked");
+// variables
   var game = {
     winnerIs: '',
-    jake: 0,
-    finn: 0,
-    audio: new Audio('img/flylo-glitc.mp3'),
+    jakeWins: 0,
+    finnWins: 0,
+    audio: new Audio('img/flylo-glitc.mp3')
   };
 
+// initiate start button click  
   startGame();
-  fadeInJumbotron();
-
-  function fadeInJumbotron() {
-    $('#logo-sm').click(function() {
-      $('.jumbotron').fadeIn(300);
-    });
-  }
-
   function startGame() {
     $('.start').click(function() {
       $('.countdown').css('visibility', 'visible');
@@ -28,8 +21,8 @@ $(document).on('ready', function() {
   }
 
   function countDown() {
-    var count = 3;
-    var counter = setInterval(timer, 1000);
+    var count = 3,
+        counter = setInterval(timer, 1000);
     function timer() {
       count--;
       if (count > 0) {
@@ -46,6 +39,7 @@ $(document).on('ready', function() {
   function handleKeyPress() {
     $(document).on('keypress', function(event) {
       // animates box left
+
       if (event.which==102) {
         $('#finn').animate({left: "+=20"}, "fast");
       }
@@ -90,17 +84,24 @@ $(document).on('ready', function() {
     }
     $('.reset').on('click', function(event) {
       if (game.winnerIs==='finn') {
-        game.finn++;
+        game.finnWins++;
       } else if (game.winnerIs==='jake') {
-        game.jake++;
+        game.jakeWins++;
       }
-      $('.finn-score').text("Finn's score: " + game.finn);
-      $('.jake-score').text("Jake's score: " + game.jake);
-      // event.preventDefault();
+      $('.finn-score').text("Finn's score: " + game.finnWins);
+      $('.jake-score').text("Jake's score: " + game.jakeWins);
       $('.box').css({left:0});
       $('.target').text('');
       game.winnerIs = '';
       $('.reset').hide();
+    });
+  }
+
+  fadeInJumbotron();
+
+  function fadeInJumbotron() {
+    $('.reset').click(function() {
+      $('.jumbotron').fadeIn(1000);
     });
   }
 
