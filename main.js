@@ -8,7 +8,7 @@ $(document).on('ready', function() {
     audio: new Audio('img/flylo-glitc.mp3')
   };
 
-// initiate start button click  
+// initiate start button click
   startGame();
   function startGame() {
     $('.start').click(function() {
@@ -19,7 +19,7 @@ $(document).on('ready', function() {
     stopAudio();
     handleKeyPress();
   }
-
+// set 3-2-1 timer
   function countDown() {
     var count = 3,
         counter = setInterval(timer, 1000);
@@ -35,7 +35,7 @@ $(document).on('ready', function() {
       }
     }
   }
-
+// animate player boxes with keypress F, J
   function handleKeyPress() {
     $(document).on('keypress', function(event) {
       // animates box left
@@ -96,9 +96,8 @@ $(document).on('ready', function() {
       $('.reset').hide();
     });
   }
-
+  
   fadeInJumbotron();
-
   function fadeInJumbotron() {
     $('.reset').click(function() {
       $('.jumbotron').fadeIn(1000);
