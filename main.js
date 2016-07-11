@@ -39,7 +39,6 @@ $(document).on('ready', function() {
   function handleKeyPress() {
     $(document).on('keypress', function(event) {
       // animates box left
-
       if (event.which==102) {
         $('#finn').animate({left: "+=20"}, "fast");
       }
@@ -55,7 +54,11 @@ $(document).on('ready', function() {
         boxOneOffset = $('#finn').offset().left,
         boxTwoOffset = $('#jake').offset().left
     ;
-    if (boxOneOffset >= rowWidth) {
+    if ((boxOneOffset >= rowWidth) && (boxTwoOffset >= rowWidth)) {
+      game.winnerIs = 'tie';
+      $('.box').clearQueue().stop(true);
+    }
+    else if (boxOneOffset >= rowWidth) {
       game.winnerIs = 'finn';
       $('.box').clearQueue().stop(true);
     } else if (boxTwoOffset >= rowWidth) {
@@ -67,12 +70,16 @@ $(document).on('ready', function() {
   }
 
   function setWinnerBannerText() {
-    if (game.winnerIs==='finn') {
-      $('.target').text('Finn the Human!');
-      $('.target').append('<img src="img/finn.gif">');
+    if (game.winnerIs==='tie') {
+      $('.target-text').text("It's a tie!");
+      $('.target').append('<img src="img/tie.gifs">');
+    }
+    else if (game.winnerIs==='finn') {
+      $('.target-text').text('Finn the Human!');
+      $('.target').append('<img src="img/finn.gif">').addClass('img-fluid');
     } else if (game.winnerIs==='jake') {
-      $('.target').text('Jake the Dog!');
-      $('.target').append('<img src="img/jake.gif">');
+      $('.target-text').text('Jake the Dog!');
+      $('.target').append('<img src="img/jake.gif">').addClass('img-fluid');
     }
   }
 
@@ -91,12 +98,13 @@ $(document).on('ready', function() {
       $('.finn-score').text("Finn's score: " + game.finnWins);
       $('.jake-score').text("Jake's score: " + game.jakeWins);
       $('.box').css({left:0});
-      $('.target').text('');
+      $('.target-text').text('');
+      $('.target').html('');
       game.winnerIs = '';
       $('.reset').hide();
     });
   }
-  
+
   fadeInJumbotron();
   function fadeInJumbotron() {
     $('.reset').click(function() {
